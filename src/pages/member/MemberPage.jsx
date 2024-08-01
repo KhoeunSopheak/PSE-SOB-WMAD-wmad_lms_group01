@@ -4,7 +4,7 @@ import Button from "../../components/Button";
 const MemberPage = () => {
   const [members, setMembers] = useState([]);
   const apiUrl = 'http://localhost:3000/api/members';
-  const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTcyMjQ5MzU1OCwiZXhwIjoxNzIyNTI5NTU4fQ.AkEqOFJqzdtzy_kXexHeaF3xaafsECO6IjHEtNrwCI4';
+  const token = localStorage.getItem('token');
   useEffect(() => {
     const fetchMembers = async () => {
       try {
