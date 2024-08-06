@@ -1,7 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import DashboardPage from "./pages/core/DashboardPage";
-import UserAccountPage from "./pages/userAccount/UserAccountPage";
+import Listacc from "./pages/useracc/Listacc";
 import BookCatalogPage from "./pages/bookCatalog/BookCatalogPage";
 import BookIssuePage from "./pages/bookIssue/BookIssuePage";
 import LoginPage from "./pages/auth/LoginPage";
@@ -10,6 +10,7 @@ import UserAccountInfoPage from "./pages/userAccount/UserAccountInfoPage";
 import CreateUserAccountPage from "./pages/userAccount/CreateUserAccountPage";
 import AppLayout from "./components/AppLayout";
 import MemberPage from "./pages/member/MemberPage";
+import Newmember from "./pages/member/Newmember";
 
 function App() {
   return (
@@ -19,13 +20,14 @@ function App() {
       <Route element={<AppLayout />}>
         <Route path="/" element={<DashboardPage />} />
         <Route path="/user-account">
-          <Route index element={<UserAccountPage />} />
+          <Route index element={<Listacc />} />
           <Route path=":id" element={<UserAccountInfoPage />} />
           <Route path="new" element={<CreateUserAccountPage />} />
         </Route>
         <Route path="/book-catalog" element={<BookCatalogPage />} />
         <Route path="/book-issue" element={<BookIssuePage />} />
         <Route path="/member" element={<MemberPage />} />
+        <Route path="/member/new" element={<Newmember />} />
       </Route>
     </Routes>
   );
