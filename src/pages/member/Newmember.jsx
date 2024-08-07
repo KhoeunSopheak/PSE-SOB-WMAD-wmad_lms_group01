@@ -10,8 +10,8 @@ const New_MemberPage = () => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     // console.log(name, value)
-    setFormData((prevFormData) => ({
-        ...prevFormData,
+    setFormData((inputdata) => ({
+      ...inputdata,
       [name]: value,
     }));
   };
@@ -20,33 +20,6 @@ const New_MemberPage = () => {
     e.preventDefault();
     console.log("Data", formData);
   };
-  const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEzLCJpYXQiOjE3MjIzOTg5OTksImV4cCI6MTcyMjQzNDk5OX0.oaixx9ZamGdYg-ZmQRsETu1w3vKxjjZhFsuq3wNJ4x4'
-  useEffect(() => {
-    const saveDataToAPI = async () => {
-      try {
-        const response = await fetch('http://localhost:3000/api/members', {
-          method: 'POST',
-          headers: {
-            'Authorization': `Bearer ${token}`, 
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify,
-        });
-
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-
-        const data = await response.json();
-        console.log('Success:', data);
-
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    };
-
-    saveDataToAPI();
-  }, [token]); 
 
   return (
     <div className="bg-gray">

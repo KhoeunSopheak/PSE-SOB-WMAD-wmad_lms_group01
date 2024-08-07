@@ -1,7 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import DashboardPage from "./pages/core/DashboardPage";
-import Listacc from "./pages/useracc/Listacc";
+import UserAccountListPage from "./pages/useracc/UserAccountListPage";
 import BookCatalogPage from "./pages/bookCatalog/BookCatalogPage";
 import BookIssuePage from "./pages/bookIssue/BookIssuePage";
 import LoginPage from "./pages/auth/LoginPage";
@@ -21,7 +21,7 @@ function App() {
       <Route element={<AppLayout />}>
         <Route path="/" element={<DashboardPage />} />
         <Route path="/user-account">
-          <Route index element={<Listacc />} />
+          <Route index element={<UserAccountListPage />} />
           <Route path=":id" element={<UserAccountInfoPage />} />
           <Route path="new" element={<CreateUserAccountPage />} />
         </Route>

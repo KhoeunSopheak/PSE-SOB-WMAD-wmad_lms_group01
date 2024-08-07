@@ -1,13 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-const Listaccount = () => {
+const UserAccountListPage = () => {
   const [users, setUsers] = useState([]);
-  const apiToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyMjkyNjM0NywiZXhwIjoxNzIyOTI5OTQ3fQ.h2ttVR5iNG1HWgmsnwLG-gN-JlIDz8YKDSne9NA9_Tg'; 
-
+  const token = localStorage.getItem("token");
   useEffect(() => {
-    fetch('http://localhost:3000/api/user_accounts', {
+    fetch("http://localhost:3000/api/user_accounts", {
+      method: "GET",
       headers: {
-        'Authorization': `Bearer ${apiToken}`, 
+        Authorization: `Bearer ${token}`,
       },
     })
       .then((res) => res.json())
@@ -16,9 +16,9 @@ const Listaccount = () => {
         setUsers(data);
       })
       .catch((error) => {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       });
-  }, [apiToken]);
+  }, [token]);
 
   return (
     <div className="p-4">
@@ -61,4 +61,4 @@ const Listaccount = () => {
   );
 };
 
-export default Listaccount;
+export default UserAccountListPage;
