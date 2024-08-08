@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ButtonSave from "../../components/ButtonSave";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function CreateBookCatalog() {
    const [title, setTitle] = useState('');
@@ -15,6 +16,7 @@ function CreateBookCatalog() {
    const [cover_image_url, setCover_image_url] = useState('');
    const [shelf_location, setShelf_location] = useState('');
    const [description, setDescription] = useState('');
+   const navigate = useNavigate();
 
    function handleSubmit(event) {
       event.preventDefault();
@@ -41,7 +43,10 @@ function CreateBookCatalog() {
          },
          body: JSON.stringify(formData)
       })
-         .then(response => console.log(response))
+         .then(response => {
+            navigate('/book-catalog');
+            console.log(response);
+         })
          .catch(error => console.log(error))
    }
 
