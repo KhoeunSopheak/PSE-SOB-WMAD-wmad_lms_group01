@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useParams } from "react-router-dom";
 import DashboardPage from "./pages/core/DashboardPage";
 import UserAccountPage from "./pages/userAccount/UserAccountPage";
 import BookCatalogPage from "./pages/bookCatalog/BookCatalogPage";
@@ -28,7 +28,7 @@ function App() {
         <Route path="/book-catalog" element={<BookCatalogPage />} />
         <Route path="/book-issue" element={<BookIssuePage />} />
         <Route path="/member" element={<MemberPage />} />
-        <Route path="/Book-catalog/info" element={<BookInformation />} />
+        <Route path="/book-catalog/info/:id" element={<BookInformation />} />
       </Route>
     </Routes>
   );
