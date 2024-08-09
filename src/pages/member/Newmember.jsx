@@ -45,6 +45,7 @@ const NewMemberPage = () => {
       .catch((error) => {
         console.error(error);
       });
+
   };
 
   return (
@@ -108,6 +109,7 @@ const NewMemberPage = () => {
               placeholder="Expiry Date"
               value={expiryDate}
               onChange={(e) => setExpiryDate(e.target.value)}
+
             />
           </div>
 
