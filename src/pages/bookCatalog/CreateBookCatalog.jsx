@@ -1,11 +1,10 @@
 import { useState } from "react";
-import ButtonSave from "../../components/ButtonSave";
-import { Link } from "react-router-dom";
+import Button from "../../components/Button";
 import { useNavigate } from "react-router-dom";
 
 function CreateBookCatalog() {
    const [title, setTitle] = useState('');
-   const [authors, setAuthors] = useState('');
+   const [author, setAuthor] = useState('');
    const [isbn, setIsbn] = useState('');
    const [publisher, setPublisher] = useState('');
    const [publication_year, setPublication_year] = useState(0);
@@ -21,18 +20,18 @@ function CreateBookCatalog() {
    function handleSubmit(event) {
       event.preventDefault();
       const formData = {
-         "title": `${title}`,
-         "authors": `${authors}`,
-         "isbn": `${isbn}`,
-         "publisher": `${publisher}`,
-         "publication_year": parseInt(publication_year),
-         "edition": `${edition}`,
-         "genre": `${genre}`,
-         "language": `${language}`,
-         "number_of_pages": parseInt(number_of_pages),
-         "cover_image_url": `${cover_image_url}`,
-         "shelf_location": `${shelf_location}`,
-         "description": `${description}`,
+         title: title,
+         authors: author,
+         isbn: isbn,
+         publisher: publisher,
+         publication_year: parseInt(publication_year),
+         edition: edition,
+         genre: genre,
+         language: language,
+         number_of_pages: parseInt(number_of_pages),
+         cover_image_url: cover_image_url,
+         shelf_location: shelf_location,
+         description: description,
       };
       const token = localStorage.getItem('token');
       fetch('http://localhost:3000/api/books', {
@@ -54,14 +53,14 @@ function CreateBookCatalog() {
       <form onSubmit={handleSubmit}>
          <div className="flex">
             <div className="bg-gray-100 flex-1 ms-5">
-               <h1 className="text-3xl font-bold text-2xl">New Book Catalog</h1>
+               <h1 className="text-3xl font-bold">New Book Catalog</h1>
                <div className="flex flex-col gap-2">
                   <label className="mt-3 text-base font-medium">Title</label>
-                  <input type="text" onChange={(e) => setTitle(e.target.value)} className="min-h-14 w-96 pl-3  border-2  rounded-lg" placeholder='Title' />
+                  <input type="text" onChange={(e) => setTitle(e.target.value)} className="min-h-14 w-96 pl-3  border-2  rounded-lg " placeholder='Title' />
                </div>
                <div className="flex flex-col gap-2">
                   <label className="mt-3 text-base font-medium">Authors</label>
-                  <input type="text" onChange={(e) => setAuthors(e.target.value)} className="min-h-14 w-96 pl-3  border-2  rounded-lg" placeholder='Authors' />
+                  <input type="text" onChange={(e) => setAuthor(e.target.value)} className="min-h-14 w-96 pl-3  border-2  rounded-lg" placeholder='Authors' />
                </div>
                <div className="flex flex-col gap-2">
                   <label className="mt-3 text-base font-medium">ISBN</label>
@@ -84,11 +83,8 @@ function CreateBookCatalog() {
                   <input type="text" onChange={(e) => setGenre(e.target.value)} className="min-h-14 w-96 pl-3  border-2  rounded-lg" placeholder='Genre' />
                </div>
                <div className="flex mt-8">
-
-                  <button className="bg-gray-400  shadow-lg text-white py-3 px-8 rounded-lg font-bold">
-                     <Link to='/book-catalog'>Concel</Link>
-                  </button>
-                  <ButtonSave onChange={handleSubmit} />
+                  <Button name="Cancel" bgColor="bg-gray-600" />
+                  <Button name="Save" bgColor="bg-blue-600" onChange={handleSubmit} />
                </div>
             </div>
             <div className="bg-gray-100 flex-1 mt-10 mr-10">
