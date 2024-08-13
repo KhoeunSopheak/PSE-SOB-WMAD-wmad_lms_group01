@@ -28,7 +28,7 @@ const UserAccountListPage = () => {
       </button>
 
       <div className="overflow-hidden rounded-xl border border-gray-500">
-        <table className="min-w-full bg-blue-200">
+        <table className="min-w-full">
           <thead className="bg-zinc-200 text-black border-b border-gray-800">
             <tr>
               <th className="py-5 px-4 text-left">Action</th>
