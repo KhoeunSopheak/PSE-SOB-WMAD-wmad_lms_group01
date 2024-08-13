@@ -1,7 +1,7 @@
 import "./App.css";
 import { Routes, Route, useParams } from "react-router-dom";
 import DashboardPage from "./pages/core/DashboardPage";
-import UserAccountPage from "./pages/userAccount/UserAccountPage";
+import UserAccountListPage from "./pages/useracc/UserAccountListPage";
 import BookCatalogPage from "./pages/bookCatalog/BookCatalogPage";
 import BookIssuePage from "./pages/bookIssue/BookIssuePage";
 import LoginPage from "./pages/auth/LoginPage";
@@ -11,6 +11,7 @@ import CreateUserAccountPage from "./pages/userAccount/CreateUserAccountPage";
 import AppLayout from "./components/AppLayout";
 import MemberPage from "./pages/member/MemberPage";
 import BookInformation from "./pages/bookCatalog/BookInformation";
+import Newmember from "./pages/member/Newmember";
 
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
       <Route element={<AppLayout />}>
         <Route path="/" element={<DashboardPage />} />
         <Route path="/user-account">
-          <Route index element={<UserAccountPage />} />
+          <Route index element={<UserAccountListPage />} />
           <Route path=":id" element={<UserAccountInfoPage />} />
           <Route path="new" element={<CreateUserAccountPage />} />
         </Route>
@@ -29,6 +30,7 @@ function App() {
         <Route path="/book-issue" element={<BookIssuePage />} />
         <Route path="/member" element={<MemberPage />} />
         <Route path="/book-catalog/info/:id" element={<BookInformation />} />
+        <Route path="/member/new" element={<Newmember />} />
       </Route>
     </Routes>
   );
