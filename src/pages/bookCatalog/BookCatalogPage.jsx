@@ -13,7 +13,7 @@ function BookCatalogPage() {
         Authorization: `Bearer ${token}`,
       },
     })
-    
+
       .then((response) => {
         if (!response.ok) throw new Error("Network response was not ok");
         return response.json();
@@ -31,7 +31,7 @@ function BookCatalogPage() {
     <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">Book Catalog</h1>
       <button className="rounded-xl bg-blue-500 hover:bg-gray-400 w-32 h-12 mb-8 text-white font-bold py-2 px-4">
-        Create
+        <Link to="/book-catalog/new">Create</Link>
       </button>
 
       <div className="overflow-hidden rounded-xl border border-gray-500">
@@ -54,8 +54,8 @@ function BookCatalogPage() {
               <tr key={book.id} className="border-b border-gray-700">
                 <td className="py-2 px-4">
                   <nav>
-                  <Link className= "px-6 py-1 bg-blue-400 text-white font-medium rounded hover:bg-gray-400" to ={`/book-catalog/info/${book.id}`}>View</Link>
-                </nav>
+                    <Link className="px-6 py-3 bg-blue-400 text-white font-medium rounded hover:bg-gray-400" to={`/book-catalog/info/${book.id}`}>View</Link>
+                  </nav>
                 </td>
                 <td className="py-6 px-8">{book.isbn}</td>
                 <td className="py-6 px-8">{book.title}</td>

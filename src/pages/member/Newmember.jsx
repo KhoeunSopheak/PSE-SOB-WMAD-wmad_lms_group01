@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const NewMemberPage = () => {
   const [fullname, setFullName] = useState("");
@@ -117,7 +117,7 @@ const NewMemberPage = () => {
             type="button"
             className="px-8 py-3 bg-gray-400 text-white font-semibold rounded-lg shadow-md hover:bg-gray-500 mr-4"
           >
-            Cancel
+            <Link to="/member">Concel</Link>
           </button>
           <button
             type="submit"

@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from "react";
 import Button from "../../components/Button";
 import { Link } from "react-router-dom";
+import ButtonSave from "../../components/Buttons";
 
 const MemberPage = () => {
   const [members, setMembers] = useState([]);
@@ -30,8 +31,9 @@ const MemberPage = () => {
     <div className="bg-gray-100">
       <h1 className="text-3xl font-bold ms-7">Member</h1>
       <td className="py-2 px-4">
-        <button className="bg-blue-500 shadow-lg shadow-indigo-500/50 text-white py-2 px-8 rounded hover:bg-gray-600 ms-4">
+        <button className="rounded-xl bg-blue-500 hover:bg-gray-400 w-32 h-12 mb-8 text-white font-bold py-2 px-4">
         <Link to ='/member/new'>Create</Link>
+        </button>
       </td>
       <div className="overflow-hidden rounded-xl border border-gray-500">
     <table class="min-w-full">
@@ -49,7 +51,7 @@ const MemberPage = () => {
   <tbody>
     {members.map((item) =>(
     <tr key={item.id} className="border-b border-slate-700">
-      <td className="py-4 px-8">{<Button/>}</td>
+      <td className="py-4 px-8">{<ButtonSave/>}</td>
       <td className="py-4 px-8">{item.member_code}</td>
       <td className="py-4 px-8">{item.fullname}</td>
       <td className="py-4 px-8">{item.phone_number}</td>

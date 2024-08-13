@@ -23,7 +23,7 @@ const UserAccountListPage = () => {
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">User Accounts</h1>
-      <button className="rounded-lg bg-blue-500 w-32 h-12 mb-8 text-white font-bold py-2 px-4">
+      <button className="rounded-lg bg-blue-500 w-32 h-12 mb-8 text-white font-bold py-2 px-4  hover:bg-gray-400">
         Create
       </button>
 
@@ -43,7 +43,7 @@ const UserAccountListPage = () => {
             {users.map((user) => (
               <tr key={user.id} className="border-b border-gray-700">
                 <td className="py-4 px-4">
-                  <button className="bg-blue-400 text-white py-3 px-8 rounded-md hover:bg-gray-600">
+                  <button className="bg-blue-400 text-white py-3 px-8 rounded-md hover:bg-gray-400">
                     View
                   </button>
                 </td>
