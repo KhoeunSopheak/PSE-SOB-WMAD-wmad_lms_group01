@@ -32,7 +32,6 @@ const MemberPage = () => {
       <td className="py-2 px-4">
         <button className="bg-blue-500 shadow-lg shadow-indigo-500/50 text-white py-2 px-8 rounded hover:bg-gray-600 ms-4">
         <Link to ='/member/new'>Create</Link>
-        </button>
       </td>
       <div className="overflow-hidden rounded-xl border border-gray-500">
     <table class="min-w-full">
