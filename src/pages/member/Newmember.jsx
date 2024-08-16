@@ -26,7 +26,7 @@ const NewMemberPage = () => {
     // console.log(newMember);
     const token = localStorage.getItem("token");
 
-    fetch("http://localhost:3000/api/members", {
+    fetch(" https://wmad-library-backend-six.vercel.app/api/members", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

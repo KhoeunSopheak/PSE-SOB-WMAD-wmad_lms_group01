@@ -4,7 +4,7 @@ const UserAccountListPage = () => {
   const [users, setUsers] = useState([]);
   const token = localStorage.getItem("token");
   useEffect(() => {
-    fetch("http://localhost:3000/api/user_accounts", {
+    fetch(" https://wmad-library-backend-six.vercel.app/api/user_accounts", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,

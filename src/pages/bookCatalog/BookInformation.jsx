@@ -6,7 +6,7 @@ function BookInformation() {
   const [books, setBooks] = useState([]);
   const { id } = useParams();
   const navigate = useNavigate();
-  const url = `http://localhost:3000/api/books/${id}`;
+  const url = ` https://wmad-library-backend-six.vercel.app/api/books/${id}`;
   const token = localStorage.getItem("token");
 
   useEffect(() => {
@@ -41,7 +41,7 @@ function BookInformation() {
         </button>
         <button
           onClick={(e) => {
-            const deleturl = `http://localhost:3000/api/books/` + id;
+            const deleturl = ` https://wmad-library-backend-six.vercel.app/api/books/` + id;
             const Delete = async () => {
               try {
                 fetch(deleturl, {
